@@ -1,0 +1,175 @@
+{
+  "DLSVersion": "2.1.6",
+  "Name": "PC-8",
+  "NameLocation": 0,
+  "ChipType": 0,
+  "Size": {
+    "x": 0.725,
+    "y": 0.5
+  },
+  "Colour": {
+    "r": 0.736769736,
+    "g": 0.384356767,
+    "b": 0.7304718,
+    "a": 1
+  },
+  "InputPins":[
+    {
+      "Name":"CLK",
+      "ID":1874855516,
+      "Position":{
+        "x":-30.875,
+        "y":20.5625
+      },
+      "BitCount":1,
+      "Colour":0,
+      "ValueDisplayMode":0
+    },
+    {
+      "Name":"RESET",
+      "ID":1893373596,
+      "Position":{
+        "x":-30.875,
+        "y":20.0625
+      },
+      "BitCount":1,
+      "Colour":0,
+      "ValueDisplayMode":0
+    }
+  ],
+  "OutputPins":[
+    {
+      "Name":"OUT",
+      "ID":348102963,
+      "Position":{
+        "x":-17.0,
+        "y":22.0625
+      },
+      "BitCount":8,
+      "Colour":0,
+      "ValueDisplayMode":0
+    }
+  ],
+  "SubChips":[
+    {
+      "Name":"ADD-8",
+      "ID":965680895,
+      "Label":"",
+      "Position":{
+        "x":-24.3025,
+        "y":21.8125
+      },
+      "OutputPinColourInfo":[{"PinColour":0,"PinID":1570632624},{"PinColour":0,"PinID":1966665671}],
+      "InternalData":null
+    },
+    {
+      "Name":"NOT",
+      "ID":502281088,
+      "Label":"const one",
+      "Position":{
+        "x":-27.3275,
+        "y":21.1875
+      },
+      "OutputPinColourInfo":[{"PinColour":0,"PinID":1675706578}],
+      "InternalData":null
+    },
+    {
+      "Name":"1-REG-8",
+      "ID":650373215,
+      "Label":"",
+      "Position":{
+        "x":-21.1775,
+        "y":22.0625
+      },
+      "OutputPinColourInfo":[{"PinColour":0,"PinID":1729417978}],
+      "InternalData":null
+    }
+  ],
+  "Wires":[
+    {
+      "SourcePinAddress":{
+        "PinID":1675706578,
+        "PinOwnerID":502281088
+      },
+      "TargetPinAddress":{
+        "PinID":1991941352,
+        "PinOwnerID":965680895
+      },
+      "ConnectionType":0,
+      "ConnectedWireIndex":-1,
+      "ConnectedWireSegmentIndex":-1,
+      "Points":[{"x":0.0,"y":0.0},{"x":0.0,"y":0.0}]
+    },
+    {
+      "SourcePinAddress":{
+        "PinID":1570632624,
+        "PinOwnerID":965680895
+      },
+      "TargetPinAddress":{
+        "PinID":1060143949,
+        "PinOwnerID":650373215
+      },
+      "ConnectionType":0,
+      "ConnectedWireIndex":-1,
+      "ConnectedWireSegmentIndex":-1,
+      "Points":[{"x":0.0,"y":0.0},{"x":0.0,"y":0.0}]
+    },
+    {
+      "SourcePinAddress":{
+        "PinID":1729417978,
+        "PinOwnerID":650373215
+      },
+      "TargetPinAddress":{
+        "PinID":519675289,
+        "PinOwnerID":965680895
+      },
+      "ConnectionType":0,
+      "ConnectedWireIndex":-1,
+      "ConnectedWireSegmentIndex":-1,
+      "Points":[{"x":0.0,"y":0.0},{"x":-19.6875,"y":22.0625},{"x":-19.6875,"y":23.375},{"x":-25.875,"y":23.375},{"x":-25.875,"y":22.3125},{"x":0.0,"y":0.0}]
+    },
+    {
+      "SourcePinAddress":{
+        "PinID":0,
+        "PinOwnerID":1874855516
+      },
+      "TargetPinAddress":{
+        "PinID":1096642031,
+        "PinOwnerID":650373215
+      },
+      "ConnectionType":0,
+      "ConnectedWireIndex":-1,
+      "ConnectedWireSegmentIndex":-1,
+      "Points":[{"x":0.0,"y":0.0},{"x":-22.625,"y":20.5625},{"x":-22.625,"y":21.9375},{"x":0.0,"y":0.0}]
+    },
+    {
+      "SourcePinAddress":{
+        "PinID":0,
+        "PinOwnerID":1893373596
+      },
+      "TargetPinAddress":{
+        "PinID":1417739072,
+        "PinOwnerID":650373215
+      },
+      "ConnectionType":0,
+      "ConnectedWireIndex":-1,
+      "ConnectedWireSegmentIndex":-1,
+      "Points":[{"x":0.0,"y":0.0},{"x":-22.375,"y":20.0625},{"x":-22.375,"y":21.6875},{"x":0.0,"y":0.0}]
+    },
+    {
+      "SourcePinAddress":{
+        "PinID":1729417978,
+        "PinOwnerID":650373215
+      },
+      "TargetPinAddress":{
+        "PinID":0,
+        "PinOwnerID":348102963
+      },
+      "ConnectionType":1,
+      "ConnectedWireIndex":2,
+      "ConnectedWireSegmentIndex":0,
+      "Points":[{"x":-19.6875,"y":22.0625},{"x":0.0,"y":0.0}]
+    }
+  ],
+  "Displays": null
+}
