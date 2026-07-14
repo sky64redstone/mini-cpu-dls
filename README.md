@@ -40,11 +40,6 @@ The architecture is intentionally minimal.
 
 The same wraparound behavior applies to the 8-bit ALU.
 If an arithmetic result exceeds `255`, the carry-out is ignored.
-Examples:
-
-* `255 + 1 = 0`
-* `256 -> 0`
-* `260 -> 4`
 
 This is modulo-256 behavior.
 There is no carry register exposed to assembly code.
@@ -53,33 +48,6 @@ There is no borrow register exposed to assembly code.
 ## Register file
 
 The CPU has 16 general-purpose registers:
-
-* `R0`
-* `R1`
-* `R2`
-* `R3`
-* `R4`
-* `R5`
-* `R6`
-* `R7`
-* `R8`
-* `R9`
-* `R10`
-* `R11`
-* `R12`
-* `R13`
-* `R14`
-* `R15`
-
-Each register is 8 bits wide.
-All registers are normal registers.
-No register is reserved.
-No register has special zero semantics.
-No register is read-only.
-No register is hidden from the programmer.
-
-### Register encoding
-
 Registers are encoded with 4 bits:
 
 | Register | Binary |
@@ -100,6 +68,13 @@ Registers are encoded with 4 bits:
 |      R13 | `1101` |
 |      R14 | `1110` |
 |      R15 | `1111` |
+
+Each register is 8 bits wide.
+All registers are normal registers.
+No register is reserved.
+No register has special zero semantics.
+No register is read-only.
+No register is hidden from the programmer.
 
 ## Instruction format
 
@@ -168,48 +143,6 @@ The subtract bit is used only with the ADD/SUB operation group.
 
 In this architecture, subtraction is encoded as the same ALU group as addition, with the subtract bit set.
 
-### Examples
-
-`ADD R1, R2`
-
-* `regB = R2 = 0010`
-* `regA = R1 = 0001`
-* `subtract = 0`
-* `aluopcode = 00`
-
-Binary:
-
-`00100001 00000000`
-
-`SUB R1, R2`
-
-* `regB = R2 = 0010`
-* `regA = R1 = 0001`
-* `subtract = 1`
-* `aluopcode = 00`
-
-Binary:
-
-`00100001 00001000`
-
-`XOR R3, R4`
-
-Binary:
-
-`01000011 00000001`
-
-`AND R5, R6`
-
-Binary:
-
-`01100101 00000010`
-
-`OR R7, R8`
-
-Binary:
-
-`10000111 00000011`
-
 ## Immediate instructions
 
 ### Semantics
@@ -246,17 +179,6 @@ Because the immediate field is 8 bits wide, the valid range is:
 * `0` to `255`
 
 The assembler should reject values outside that range.
-
-### Example
-
-`MOV R3, 42`
-
-* immediate = `42 = 00101010`
-* regA = `R3 = 0011`
-
-Binary:
-
-`00101010 10000011`
 
 ## Supported instructions
 
@@ -438,19 +360,4 @@ If the CPU design changes, especially in any of the following areas, the assembl
 * program counter width
 * overflow behavior
 * supported instructions
-
-## Final summary
-
-This assembler is intended for a small 8-bit CPU with:
-
-* 16 general-purpose 8-bit registers
-* 16-bit instructions stored in ROM
-* an 8-bit program counter
-* modulo-256 ALU behavior
-* no visible carry handling
-* no branches
-* no memory access
-* direct binary ROM output
-
-It is a minimal assembler for a minimal architecture.
 
